@@ -1,6 +1,6 @@
-function volume_sphere() {
-    //Write your code here
-	event.preventDefault();
+function volume_sphere(event) {
+    // Prevent the form from submitting and refreshing the page
+    event.preventDefault();
 
     // Retrieve the radius value from the input field
     const radiusInput = document.getElementById('radius').value;
@@ -21,7 +21,8 @@ function volume_sphere() {
     // Display the calculated volume in the designated output field
     document.getElementById('volume').value = roundedVolume;
 }
-  
-} 
 
-window.onload = document.getElementById('MyForm').onsubmit = volume_sphere;
+// Set the onsubmit event handler to the volume_sphere function
+window.onload = function() {
+    document.getElementById('MyForm').onsubmit = volume_sphere;
+};
